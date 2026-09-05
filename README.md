@@ -35,6 +35,7 @@ npm run screens   # ~60 s: full-page shots at 10 viewport sizes + layout asserts
 | `src/nav.js` | Mobile burger menu |
 | `tests/smoke.mjs` | Flow test (`npm test`) |
 | `tests/screens.mjs` | Viewport sweep (`npm run screens`) |
+| `tests/og.mjs` | Renders the social preview card to `public/og.jpg` (`npm run og`); re-run after changing hero copy |
 | `.github/workflows/deploy.yml` | Build + smoke test + deploy to GitHub Pages on push to `main` |
 
 Fonts are self-hosted via `@fontsource` (no Google Fonts request → no consent needed). No cookies, no tracking.
