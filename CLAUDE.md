@@ -10,4 +10,4 @@ Static one-pager: HTML + CSS + JS via Vite, deployed to GitHub Pages. See `READM
 - Run `npm run build` before committing; the Pages workflow builds from `main`.
 
 ## Workflow
-Edit → `npm run dev` → check desktop 1280 + mobile 390 → `npm run build` → commit to `main` → Actions deploys.
+Feature branch (`feat/<topic>`) per change → edit → `npm run dev` → check desktop 1280 + mobile 390 → `npm run build` + `npm test` → commit → merge into `main` (no PR needed; branches stay as restore points) → push → Actions deploys.
