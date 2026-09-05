@@ -23,4 +23,20 @@ export function initNav() {
   window.matchMedia('(min-width: 761px)').addEventListener('change', (e) => {
     if (e.matches) setOpen(false)
   })
+
+  // Scroll-spy: mark the nav link whose section is currently in view.
+  const links = Array.from(nav.querySelectorAll('a[href^="#"]'))
+  const sections = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean)
+  if (!sections.length || !('IntersectionObserver' in window)) return
+  const visible = new Map()
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => visible.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0))
+      const [top] = [...visible.entries()].sort((a, b) => b[1] - a[1])
+      const current = top && top[1] > 0 ? top[0] : null
+      links.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${current}`))
+    },
+    { rootMargin: '-35% 0px -45% 0px', threshold: [0, .1, .25, .5, .75, 1] },
+  )
+  sections.forEach((s) => spy.observe(s))
 }
