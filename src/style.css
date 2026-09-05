@@ -617,11 +617,11 @@ h2 { font-size: clamp(26px, 2.7vw, 36px); margin-top: 8px; }
   .field textarea { height: 110px; }
 
   /* rounded card, brand name only, one row of links, one-line emergency note */
-  .footer { margin: 24px 12px 12px; border-radius: var(--radius-lg); padding: 30px 28px 28px; display: grid; gap: 18px; }
-  .footer .brand__name { font-size: 28px; }
+  .footer { margin: 24px 12px 12px; border-radius: var(--radius-lg); padding: 24px 22px 22px; display: grid; gap: 12px; }
+  .footer .brand__name { font-size: 24px; }
   .footer .brand__sub { display: none; }
-  .footer__links { gap: 22px; flex-wrap: wrap; font-size: 15px; font-weight: 500; }
-  .footer__note { font-size: 14px; opacity: .8; }
+  .footer__links { gap: 18px; flex-wrap: wrap; font-size: 14px; font-weight: 500; }
+  .footer__note { font-size: 12.5px; opacity: .8; }
   .footer__note-long { display: none; }
   .footer__note a { font-weight: 500; }
 
