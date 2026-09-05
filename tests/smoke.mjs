@@ -26,7 +26,8 @@ const browser = await chromium.launch({ executablePath: exe })
 const errors = []
 
 async function run(name, vw, vh) {
-  const ctx = await browser.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: 1 })
+  // reducedMotion: the page skips its transitions, so flows can be asserted without fixed sleeps
+  const ctx = await browser.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: 1, reducedMotion: 'reduce' })
   const page = await ctx.newPage()
   page.on('pageerror', (e) => errors.push(`${name}: ${e.message}`))
   page.on('console', (m) => { if (m.type() === 'error') errors.push(`${name} console: ${m.text()}`) })
@@ -36,30 +37,28 @@ async function run(name, vw, vh) {
     for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo({ top: y, behavior: 'instant' }); await new Promise(r => setTimeout(r, 120)) }
     window.scrollTo(0, 0)
   })
-  await page.waitForTimeout(900)
+  await page.waitForTimeout(150)
   await page.screenshot({ path: `${out}${name}-full.png`, fullPage: true })
 
   // quiz: all yes
   await page.locator('#check').scrollIntoViewIfNeeded()
-  for (let i = 0; i < 3; i++) {
-    await page.click('[data-answer="yes"]')
-    await page.waitForSelector('[data-answer="yes"], [data-reset]', { state: 'attached' })
-    await page.waitForTimeout(1500)
-  }
+  const step = async (sel) => { await page.click(sel); await page.waitForSelector(`${sel}:disabled`, { state: 'detached' }) }
+  for (let i = 0; i < 3; i++) await step('[data-answer="yes"]')
+  await page.waitForSelector('[data-reset]')
   const r1 = await page.locator('.quiz__result-title').textContent()
   await page.screenshot({ path: `${out}${name}-quiz-yes.png`, clip: await page.locator('#quiz').boundingBox() })
-  await page.click('[data-reset]'); await page.waitForTimeout(900)
+  await page.click('[data-reset]'); await page.waitForSelector('[data-answer="yes"]')
   // all no → bonus → no
-  for (let i = 0; i < 3; i++) { await page.click('[data-answer="no"]'); await page.waitForTimeout(1500) }
+  for (let i = 0; i < 3; i++) await step('[data-answer="no"]')
+  await page.waitForSelector('[data-answer="bonusNo"]')
   const bonus = await page.locator('.quiz__q').textContent()
-  await page.click('[data-answer="bonusNo"]'); await page.waitForTimeout(900)
+  await page.click('[data-answer="bonusNo"]'); await page.waitForSelector('[data-reset]')
   const r0 = await page.locator('.quiz__result-title').textContent()
   await page.screenshot({ path: `${out}${name}-quiz-no.png`, clip: await page.locator('#quiz').boundingBox() })
   // 1 yes
-  await page.click('[data-reset]'); await page.waitForTimeout(900)
-  await page.click('[data-answer="yes"]'); await page.waitForTimeout(1500)
-  await page.click('[data-answer="no"]'); await page.waitForTimeout(1500)
-  await page.click('[data-answer="no"]'); await page.waitForTimeout(1500)
+  await page.click('[data-reset]'); await page.waitForSelector('[data-answer="yes"]')
+  await step('[data-answer="yes"]'); await step('[data-answer="no"]'); await step('[data-answer="no"]')
+  await page.waitForSelector('[data-reset]')
   const r1b = await page.locator('.quiz__result-title').textContent()
 
   // contact form: empty submit → error; filled → done
@@ -68,7 +67,7 @@ async function run(name, vw, vh) {
   const err = await page.locator('[data-status]').textContent()
   await page.fill('input[name=firstname]', 'Test'); await page.fill('input[name=contact]', 'test@example.com')
   await page.check('input[name=consent]')
-  await page.click('[data-submit]'); await page.waitForTimeout(1500)
+  await page.click('[data-submit]'); await page.waitForSelector('.form__done h3', { timeout: 5000 }).catch(() => null)
   const done = await page.locator('.form__done h3').textContent().catch(() => null)
   await page.screenshot({ path: `${out}${name}-form.png`, clip: await page.locator('#kontakt').boundingBox() })
 

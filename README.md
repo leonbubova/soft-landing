@@ -11,6 +11,16 @@ npm run build     # → dist/
 npm run preview
 ```
 
+## Tests
+
+```
+npm run build && npm run preview   # in one terminal
+npm test          # ~20 s: quiz paths, form, legal modal, mobile menu, no JS errors (desktop + mobile)
+npm run screens   # ~60 s: full-page shots at 10 viewport sizes + layout asserts → test-results/screens/index.html
+```
+
+`npm test` also runs in the deploy workflow and blocks the deploy on failure. Both scripts need a Chrome: a cached Playwright Chromium, `/Applications/Google Chrome.app`, or `CHROME_PATH=…`.
+
 ## Structure
 
 | Path | What |
@@ -23,7 +33,9 @@ npm run preview
 | `src/contact.js` | Contact form (placeholder mode / form backend) |
 | `src/legal.js` | Impressum & Datenschutz modal (`#impressum`, `#datenschutz`) |
 | `src/nav.js` | Mobile burger menu |
-| `.github/workflows/deploy.yml` | Build + deploy to GitHub Pages on push to `main` |
+| `tests/smoke.mjs` | Flow test (`npm test`) |
+| `tests/screens.mjs` | Viewport sweep (`npm run screens`) |
+| `.github/workflows/deploy.yml` | Build + smoke test + deploy to GitHub Pages on push to `main` |
 
 Fonts are self-hosted via `@fontsource` (no Google Fonts request → no consent needed). No cookies, no tracking.
 

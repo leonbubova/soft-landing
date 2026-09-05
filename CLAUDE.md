@@ -7,7 +7,8 @@ Static one-pager: HTML + CSS + JS via Vite, deployed to GitHub Pages. See `READM
 - No third-party requests at runtime (fonts self-hosted, no analytics). Keeps the Datenschutz text true and avoids a cookie banner.
 - Personal data in Impressum/Datenschutz stays as `[…]` placeholders until Lea provides it.
 - Repo name is deliberately anonymous; don't put the client's name in repo name, commit messages, or PR titles.
-- Run `npm run build` before committing; the Pages workflow builds from `main`.
+- Run `npm run build` + `npm test` before committing; the Pages workflow builds, smoke-tests and deploys from `main`. After layout changes also `npm run screens` and look at the contact sheet.
+- Content max-width is 1320px (`--content`), applied via `--pad-x`; full-bleed backgrounds stay full-bleed.
 
 ## Workflow
 Feature branch (`feat/<topic>`) per change → edit → `npm run dev` → check desktop 1280 + mobile 390 → `npm run build` + `npm test` → commit → merge into `main` (no PR needed; branches stay as restore points) → push → Actions deploys.
