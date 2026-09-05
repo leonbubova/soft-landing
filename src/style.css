@@ -448,11 +448,10 @@ h2 { font-size: clamp(26px, 2.7vw, 36px); margin-top: 8px; }
 .brand__name { font-size: 26px; }
 .brand__sub { font-size: 10px; }
 .nav { top: 32px; right: 60px; gap: 22px; font-size: 14px; }
-:root { --hs: 1; } /* hero copy scale, dev switcher sets it */
-.hero h1 { font-size: calc(clamp(34px, 3.5vw, 46px) * var(--hs)); max-width: min(calc(560px * var(--hs)), 100%); margin-top: 40px; }
-.hero__lead { font-size: calc(16px * var(--hs)); margin-top: calc(20px * var(--hs)); max-width: min(calc(480px * var(--hs)), 100%); }
-.hero__cta { margin-top: calc(36px * var(--hs)); }
-.hero__cta .btn { height: calc(48px * var(--hs)); font-size: calc(15px * var(--hs)); padding: 0 calc(22px * var(--hs)); }
+.hero h1 { font-size: clamp(44px, 4.9vw, 64px); max-width: min(780px, 100%); margin-top: 40px; }
+.hero__lead { font-size: 22px; margin-top: 28px; max-width: min(670px, 100%); }
+.hero__cta { margin-top: 44px; }
+.hero__cta .btn { height: 52px; font-size: 15.5px; padding: 0 24px; }
 .hero__meta { margin-top: 48px; font-size: 12.5px; gap: 18px; }
 .section { padding: 96px var(--pad-x) 88px; }
 .section--check { padding: 104px var(--pad-x); }
