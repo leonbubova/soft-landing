@@ -138,11 +138,11 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 .hero__text {
   position: relative; z-index: 1;
   display: flex; flex-direction: column;
-  padding: 34px 56px 20px var(--pad-x);
+  padding: 40px 56px 20px var(--pad-x);
 }
 .hero__copy { margin-top: auto; }
 .hero__eyebrow { display: none; margin-bottom: 18px; }
-.brand { display: flex; flex-direction: column; gap: 2px; }
+.brand { display: flex; flex-direction: column; gap: 2px; height: 48px; justify-content: center; }
 .brand__name { font-family: var(--serif); font-size: 30px; line-height: 1; }
 .brand__sub { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; opacity: .55; }
 .hero h1 {
@@ -159,7 +159,7 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
   order: 2;
 }
 .nav {
-  position: absolute; top: 42px; right: 48px; z-index: 2;
+  position: absolute; top: 40px; right: 48px; z-index: 2; height: 48px; align-items: center;
   display: flex; gap: 26px; font-size: 15px; font-weight: 500;
 }
 .nav a { text-decoration: none; position: relative; }
@@ -377,7 +377,7 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 
 /* ---- Footer ---- */
 .footer {
-  margin: 40px max(20px, calc((100vw - var(--content)) / 2)) 20px; border-radius: var(--radius-lg); padding: 32px 40px;
+  margin: 40px max(16px, calc(var(--pad-x) - 40px)) 20px; border-radius: var(--radius-lg); padding: 32px 40px;
   display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
 }
 .footer > * { position: relative; z-index: 1; }
