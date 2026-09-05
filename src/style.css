@@ -433,6 +433,71 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 /* ============ Mobile menu ============ */
 body.menu-open { overflow: hidden; }
 
+/* ============ Compact scale (exploration) ============ */
+/* Everything ~15% smaller and tighter: narrower content cap, smaller type, shorter sections. */
+:root { --content: 1120px; --edge: 32px; --radius: 20px; --radius-lg: 24px; }
+body { font-size: 15px; }
+.eyebrow { font-size: 11px; }
+h2 { font-size: clamp(26px, 2.7vw, 36px); margin-top: 8px; }
+.btn { height: 48px; padding: 0 22px; font-size: 15px; }
+.pill { font-size: 12px; padding: 6px 12px; }
+.hero { min-height: max(600px, 100svh); }
+.hero__text { padding: 32px 48px 48px var(--edge); }
+.hero__panel { margin: 20px 20px 20px 0; }
+.brand__name { font-size: 26px; }
+.brand__sub { font-size: 10px; }
+.nav { top: 32px; right: calc(var(--edge) + 20px); gap: 22px; font-size: 14px; }
+.hero h1 { font-size: clamp(34px, 3.5vw, 46px); max-width: min(460px, 100%); margin-top: 40px; }
+.hero__lead { font-size: 16px; margin-top: 20px; max-width: min(420px, 100%); }
+.hero__cta { margin-top: 36px; }
+.hero__meta { margin-top: 30px; font-size: 12.5px; gap: 18px; }
+.section { padding: 96px var(--pad-x) 88px; }
+.section--check { padding: 104px var(--pad-x); }
+.section__head { gap: 40px; margin-bottom: 44px; }
+.section__intro { font-size: 15.5px; max-width: 460px; }
+.h2--tight { margin-bottom: 36px; }
+.services { gap: 14px; }
+.card { padding: 22px; min-height: 200px; }
+.card h3 { font-size: 18px; }
+.card p { font-size: 13.5px; }
+.notice { margin-top: 64px; padding-top: 40px; gap: 40px; }
+.notice__title { font-size: 21px; }
+.notice p { font-size: 15px; }
+.check { gap: 56px; }
+.check h2 { font-size: clamp(26px, 2.9vw, 38px); margin: 10px 0 18px; }
+.check__intro p { font-size: 15.5px; }
+.quiz { padding: 30px; }
+.quiz__dots { margin-bottom: 26px; }
+.quiz__q { font-size: 19px; min-height: 84px; }
+.quiz__actions { margin-top: 26px; gap: 12px; }
+.quiz__result-title { font-size: 19px; }
+.quiz__result-text { font-size: 15px; }
+.steps { gap: 32px; }
+.steps::before { top: 29px; left: 24px; right: 24px; }
+.step__num { width: 48px; height: 48px; font-size: 24px; }
+.step h3 { font-size: 18px; margin-top: 18px; }
+.step p { font-size: 14px; }
+.about { grid-template-columns: 340px 1fr; gap: 14px; }
+.photo { min-height: 440px; }
+.cv { gap: 14px; }
+.cv__item { padding: 22px; }
+.cv__icon { width: 48px; height: 48px; border-radius: 15px; }
+.cv__icon svg { width: 22px; height: 22px; }
+.cv__item h3 { font-size: 17px; margin-top: 24px; }
+.cv__item p { font-size: 14px; }
+.quotes { gap: 14px; }
+.quote { padding: 26px; gap: 18px; }
+.quote__mark { width: 34px; height: 34px; }
+.quote p { font-size: 17px; }
+.section--contact { gap: 56px; }
+.section--contact h2 { font-size: clamp(26px, 2.9vw, 38px); margin: 10px 0 18px; }
+.contact__intro p { font-size: 15.5px; margin-bottom: 30px; }
+.contact__details { font-size: 15px; gap: 10px; }
+.form, .form__row { gap: 12px; }
+.field input { height: 48px; border-radius: 14px; }
+.field textarea { height: 120px; border-radius: 14px; }
+.footer { padding: 32px var(--edge); }
+
 /* ============ Responsive ============ */
 @media (max-width: 1080px) {
   :root { --pad-x: 36px; }
