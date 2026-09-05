@@ -24,3 +24,4 @@ initReveal()
 initQuiz(document.querySelector('[data-quiz]'))
 initContact(document.querySelector('[data-contact-form]'))
 initLegal()
+
