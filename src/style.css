@@ -18,6 +18,7 @@
   --pad-x: max(56px, calc((100vw - var(--content)) / 2));
   --radius: 24px;
   --radius-lg: 28px;
+  --edge: 40px; /* hero + footer hug the viewport, not the content cap */
 
   --ease-out: cubic-bezier(.2, .7, .2, 1);
   --ease-pop: cubic-bezier(.34, 1.56, .64, 1);
@@ -138,7 +139,7 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 .hero__text {
   position: relative; z-index: 1;
   display: flex; flex-direction: column;
-  padding: 40px 56px 20px var(--pad-x);
+  padding: 40px 56px 64px var(--edge);
 }
 .hero__copy { margin-top: auto; }
 .hero__eyebrow { display: none; margin-bottom: 18px; }
@@ -154,12 +155,12 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 .hero__meta { display: flex; align-items: center; gap: 22px; margin-top: 40px; font-size: 13px; flex-wrap: wrap; }
 
 .hero__panel {
-  margin: 20px 20px 20px 0;
+  margin: 24px 24px 24px 0;
   border-radius: var(--radius-lg);
   order: 2;
 }
 .nav {
-  position: absolute; top: 40px; right: 48px; z-index: 2; height: 48px; align-items: center;
+  position: absolute; top: 40px; right: calc(var(--edge) + 24px); z-index: 2; height: 48px; align-items: center;
   display: flex; gap: 26px; font-size: 15px; font-weight: 500;
 }
 .nav a { text-decoration: none; position: relative; }
@@ -377,10 +378,10 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 
 /* ---- Footer ---- */
 .footer {
-  margin: 40px max(16px, calc(var(--pad-x) - 40px)) 20px; border-radius: var(--radius-lg); padding: 32px 40px;
+  margin: 40px 0 0; padding: 40px var(--edge);
   display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
 }
-.footer > * { position: relative; z-index: 1; }
+.footer > :not(.noise-layer) { position: relative; z-index: 1; }
 .footer__links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; }
 .footer__links a { text-decoration: none; }
 .footer__links a:hover { text-decoration: underline; }
@@ -546,7 +547,7 @@ body.menu-open { overflow: hidden; }
   .field input { height: 54px; padding: 0 16px; }
   .field textarea { height: 110px; }
 
-  .footer { margin: 24px 12px 12px; padding: 34px 24px 26px; display: grid; gap: 22px; }
+  .footer { margin: 24px 0 0; padding: 34px var(--pad-x) 26px; display: grid; gap: 22px; }
   .footer .brand__name { font-size: 28px; }
   .footer__links { gap: 8px; flex-wrap: wrap; font-size: 14px; font-weight: 600; }
   .footer__links a {
