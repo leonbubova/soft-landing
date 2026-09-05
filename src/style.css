@@ -445,9 +445,9 @@ h2 { font-size: clamp(26px, 2.7vw, 36px); margin-top: 8px; }
 .hero { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); }
 .hero__text { padding: 32px 48px 44px 56px; }
 .hero__panel { margin: 20px 20px 20px 0; }
-.brand__name { font-size: 26px; }
-.brand__sub { font-size: 10px; }
-.nav { top: 32px; right: 60px; gap: 22px; font-size: 14px; }
+.brand__name { font-size: 30px; }
+.brand__sub { font-size: 11px; }
+.nav { top: 32px; right: 60px; gap: 26px; font-size: 15.5px; }
 .hero h1 { font-size: clamp(44px, 4.9vw, 64px); max-width: min(780px, 100%); margin-top: 40px; }
 .hero__lead { font-size: 22px; margin-top: 28px; max-width: min(670px, 100%); }
 .hero__cta { margin-top: 44px; }
