@@ -132,20 +132,24 @@ h3 { font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: max(640px, 100svh);
+  max-width: calc(var(--content) + 2 * 56px);
+  margin: 0 auto;
 }
+/* hero is above the fold: never scroll-reveal it */
+.hero .reveal { opacity: 1; transform: none; transition: none; }
 .hero__text {
   position: relative; z-index: 1;
   display: flex; flex-direction: column;
-  padding: 34px 56px 20px var(--pad-x);
+  padding: 34px 56px 48px;
 }
-.hero__copy { margin-top: auto; }
+.hero__copy { margin: auto 0; padding: 40px 0; }
 .hero__eyebrow { display: none; margin-bottom: 18px; }
 .brand { display: flex; flex-direction: column; gap: 2px; }
 .brand__name { font-family: var(--serif); font-size: 30px; line-height: 1; }
 .brand__sub { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; opacity: .55; }
 .hero h1 {
   font-size: clamp(40px, 4.4vw, 56px); font-weight: 700; line-height: 1.05;
-  letter-spacing: -.035em; max-width: min(520px, 100%); margin-top: 60px;
+  letter-spacing: -.035em; max-width: min(520px, 100%); margin-top: 0;
 }
 .hero__lead { margin-top: 26px; font-size: 18px; line-height: 1.6; max-width: min(470px, 100%); opacity: .8; }
 .hero__cta { display: flex; gap: 12px; margin-top: 52px; flex-wrap: wrap; }
@@ -458,7 +462,7 @@ body.menu-open { overflow: hidden; }
   .hero__panel { position: absolute; inset: 0; margin: 0; border-radius: 0; }
   .hero__text { min-height: 100svh; padding: 22px 22px 28px; }
   .hero__eyebrow { display: block; }
-  .hero__copy { margin: auto 0 0; padding-top: 60px; }
+  .hero__copy { margin: auto 0 0; padding: 60px 0 0; }
   .brand__name { font-size: 24px; }
   .brand__sub { font-size: 9.5px; }
   .hero h1 { font-size: 40px; margin-top: 0; }
@@ -468,8 +472,6 @@ body.menu-open { overflow: hidden; }
   .hero__cta .btn--soft { background: transparent; padding: 0; height: auto; font-size: 14px; opacity: .75; }
   .hero__cta .btn--soft:hover { box-shadow: none; }
   .hero__meta { display: none; }
-  /* hero content is above the fold on mobile: no scroll-reveal, always visible */
-  .hero .reveal { opacity: 1; transform: none; transition: none; }
 
   .burger {
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
