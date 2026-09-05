@@ -1,3 +1,12 @@
+/* ============ Fonts ============ */
+/* Self-hosted, latin subset, woff2 only. font-display: block + <link rel=preload> in index.html
+   = no fallback-font flash on load; the files are tiny and preloaded, so the block never shows. */
+@font-face { font-family: 'Instrument Serif'; font-style: normal; font-weight: 400; font-display: block; src: url('/fonts/instrument-serif-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 400; font-display: block; src: url('/fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 500; font-display: block; src: url('/fonts/plus-jakarta-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 600; font-display: block; src: url('/fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 700; font-display: block; src: url('/fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2'); }
+
 /* ============ Tokens ============ */
 :root {
   --lilac: #8f6fe8;

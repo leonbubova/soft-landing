@@ -38,7 +38,7 @@ npm run screens   # ~60 s: full-page shots at 10 viewport sizes + layout asserts
 | `tests/og.mjs` | Renders the social preview card to `public/og.jpg` (`npm run og`); re-run after changing hero copy |
 | `.github/workflows/deploy.yml` | Build + smoke test + deploy to GitHub Pages on push to `main` |
 
-Fonts are self-hosted via `@fontsource` (no Google Fonts request → no consent needed). No cookies, no tracking.
+Fonts are self-hosted from `public/fonts/` (latin woff2 copied from `@fontsource`, declared in `style.css` with `font-display: block` and preloaded in `index.html`, so there is no fallback-font flash). No Google Fonts request → no consent needed. No cookies, no tracking. The CSS bundle is inlined into the HTML at build time (`vite.config.js`), so first paint waits only for the HTML.
 
 ## Kontaktformular
 

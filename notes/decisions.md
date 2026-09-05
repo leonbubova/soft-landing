@@ -15,3 +15,7 @@
 - **Compact scale block** (before the responsive rules): content cap 1120px, smaller sections/cards/quiz/form. Hero copy is the exception and went *up* (h1 64px, lead 22px) with 52px CTAs — picked from a live size switcher.
 - **Mobile hero:** eyebrow + headline at the optical centre, lead hidden, CTAs anchored at the bottom. Mobile nav overlay needs `height: auto` because the desktop nav row sets a height.
 - **Mobile footer:** small rounded card, brand name only, one row of links, short emergency note.
+
+## 2026-09-05 · Performance pass
+- **Lighthouse 100/100/100/100** (was 99 perf). Two changes: the CSS bundle is inlined into `index.html` at build time (removes the render-blocking request), and fonts are declared by hand with `font-display: block` + `<link rel=preload>` instead of the fontsource CSS (`swap`), which caused the visible fallback-font flash on every load.
+- Only the five latin woff2 files ship (`public/fonts/`, 76 KB total). `@fontsource` stays a dev dependency for `tests/og.mjs`.
