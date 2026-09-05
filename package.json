@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node tests/smoke.mjs"
+    "test": "node tests/smoke.mjs",
+    "screens": "node tests/screens.mjs"
   },
   "type": "module",
   "devDependencies": {
