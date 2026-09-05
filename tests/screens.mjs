@@ -67,7 +67,7 @@ for (const [name, w, h, dpr, mobile] of SIZES) {
     const content = document.querySelector('#leistungen .section__head').getBoundingClientRect()
     return {
       hscroll: de.scrollWidth > de.clientWidth,
-      heroFills: hero.bottom >= innerHeight - 1,
+      heroFills: hero.height >= innerHeight - 1,
       heroCtaAboveFold: cta.bottom <= innerHeight,
       h1Lines: Math.round(h1.height / parseFloat(getComputedStyle(document.querySelector('.hero h1')).lineHeight)),
       contentWidth: Math.round(content.width),

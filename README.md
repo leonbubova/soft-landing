@@ -32,7 +32,7 @@ npm run screens   # ~60 s: full-page shots at 10 viewport sizes + layout asserts
 | `src/quiz.js` | 3-question self check + bonus question, micro-animations |
 | `src/contact.js` | Contact form (placeholder mode / form backend) |
 | `src/legal.js` | Impressum & Datenschutz modal (`#impressum`, `#datenschutz`) |
-| `src/nav.js` | Mobile burger menu + scroll-spy for the top bar |
+| `src/nav.js` | Mobile burger menu |
 | `tests/smoke.mjs` | Flow test (`npm test`) |
 | `tests/screens.mjs` | Viewport sweep (`npm run screens`) |
 | `.github/workflows/deploy.yml` | Build + smoke test + deploy to GitHub Pages on push to `main` |

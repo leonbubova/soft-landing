@@ -14,26 +14,24 @@
 <a class="skip" href="#leistungen">Zum Inhalt springen</a>
 
 <!-- ============ HERO ============ -->
-<header class="topbar" id="top">
-  <a class="brand" href="#top" aria-label="Zum Seitenanfang">
-    <span class="brand__name">lea bertoncello</span>
-    <span class="brand__sub">Psychosoziale Beraterin · Köln</span>
-  </a>
+<header class="hero" id="top">
+  <div class="hero__panel grad grad--hero noise"></div>
   <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
     <span></span><span></span>
   </button>
-  <nav class="nav" id="menu" aria-label="Hauptnavigation">
+  <nav class="nav" id="menu">
     <a href="#leistungen">Leistungen</a>
     <a href="#ablauf">Ablauf</a>
     <a href="#ueber-mich">Über mich</a>
-    <a href="#kontakt" class="nav__cta">Kontakt</a>
+    <a href="#kontakt">Kontakt</a>
   </nav>
-</header>
-
-<section class="hero" aria-label="Einführung">
-  <div class="hero__panel grad grad--hero noise"></div>
 
   <div class="hero__text">
+    <div class="brand">
+      <div class="brand__name">lea bertoncello</div>
+      <div class="brand__sub">Psychosoziale Beraterin · Köln</div>
+    </div>
+
     <div class="hero__copy">
       <div class="eyebrow hero__eyebrow">Psychosoziale Beratung in Köln</div>
       <h1 class="reveal">Manchmal hilft es, nicht alles allein zu machen.</h1>
@@ -42,14 +40,14 @@
         <a class="btn btn--ink" href="#kontakt">Lernen wir uns kennen</a>
         <a class="btn btn--soft" href="#check">Passt das zu mir?</a>
       </div>
-    </div>
-
-    <div class="hero__meta">
-      <span class="pill"><span class="pill__dot"></span>Freie Plätze ab Oktober</span>
-      <span class="muted hero__where">Vor Ort in Köln <span aria-hidden="true">·</span> Per Video</span>
+      <div class="hero__meta reveal" style="--d:3">
+        <span class="pill"><span class="pill__dot"></span>Freie Plätze ab Oktober</span>
+        <span class="muted">Vor Ort in Köln</span>
+        <span class="muted">Per Video</span>
+      </div>
     </div>
   </div>
-</section>
+</header>
 
 <main>
 
@@ -122,7 +120,7 @@
 </section>
 
 <!-- ============ ABLAUF ============ -->
-<section class="section" id="ablauf">
+<section class="section section--tint" id="ablauf">
   <div class="section__head">
     <div class="reveal">
       <div class="eyebrow">Ablauf</div>
@@ -199,7 +197,7 @@
 </section>
 
 <!-- ============ STIMMEN ============ -->
-<section class="section" id="stimmen">
+<section class="section section--tint" id="stimmen">
   <div class="reveal">
     <div class="eyebrow">Stimmen</div>
     <h2 class="h2--tight">Was Klient:innen sagen</h2>
@@ -275,26 +273,16 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer grad grad--footer noise">
-  <div class="footer__top">
-    <div class="brand footer__brand">
-      <span class="brand__name">lea bertoncello</span>
-      <span class="brand__sub">Psychosoziale Beraterin · Köln</span>
-    </div>
-    <nav class="footer__links" aria-label="Fußzeile">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#ueber-mich">Über mich</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+  <div class="footer__brand">
+    <div class="brand__name">lea bertoncello</div>
+    <div class="brand__sub">Psychosoziale Beraterin · Köln</div>
   </div>
-  <div class="footer__bottom">
-    <div class="footer__note"><span>In Notfällen, rund um die Uhr:</span> <a href="tel:08001110111">Telefonseelsorge 0800 111 0 111</a></div>
-    <nav class="footer__legal" aria-label="Rechtliches">
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
-      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </nav>
-  </div>
+  <nav class="footer__links">
+    <a href="#impressum">Impressum</a>
+    <a href="#datenschutz">Datenschutz</a>
+    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </nav>
+  <div class="footer__note"><span>In Notfällen, rund um die Uhr:</span> <a href="tel:08001110111">Telefonseelsorge 0800 111 0 111</a></div>
 </footer>
 
 <!-- ============ LEGAL MODAL ============ -->
